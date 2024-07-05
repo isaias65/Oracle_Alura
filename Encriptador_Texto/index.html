@@ -8,20 +8,30 @@
     <title>Encriptador Texto</title>
 </head>
 <body>
-    <section>
-        <h1>a</h1>
-    </section>
-    <section>
-        <textarea name="" id=""></textarea>
-        <i class='bx bxs-info-circle'></i>
-        <span>Solo letras minúsculas y sin acentos</span>
-        <button type="submit">Encriptar</button>
-        <button type="submit">Desencriptar</button>
-    </section>
-    <section>
-        <img src="./Assets/logo_anime.png" alt="">
-        <h2>Ningún mensaje fue encontrado</h2>
-        <p>Ingresa el texto que desees encriptar o desencriptar.</p>
-    </section>
+    <main>
+        <section class="section_logo">
+            <h1>a</h1>
+        </section>
+        <section class="section_ingreso">
+            <textarea name="" id="" placeholder="Ingrese el texto aquí"></textarea>
+            <div class="ingreso_info">
+                <div class="info_container_alert">
+                    <i class='bx bxs-info-circle'></i>
+                    <span class="info_letras"></i> Solo letras minúsculas y sin acentos</span>
+                </div>
+                <div class="ingreso_button">
+                    <button class="encriptar" type="submit">Encriptar</button>
+                    <button class="desencriptar" type="submit">Desencriptar</button>
+                </div>
+            </div>
+        </section>
+        <section class="section_salida">
+            <img src="./Assets/logo.png" alt="">
+            <div class="salida_info">
+                <h2>Ningún mensaje fue encontrado</h2>
+                <p>Ingresa el texto que desees encriptar o desencriptar.</p>
+            </div>
+        </section>
+    </main>
 </body>
 </html>
