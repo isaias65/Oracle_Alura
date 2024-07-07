@@ -13,30 +13,29 @@
             <h1>a</h1>
         </section>
         <section class="section_ingreso">
-            <textarea name="" id="" placeholder="Ingrese el texto aquí"></textarea>
+            <textarea name="textarea" id="textarea" placeholder="Ingrese el texto aquí"></textarea>
             <div class="ingreso_info">
                 <div class="info_container_alert">
                     <i class='bx bxs-info-circle'></i>
                     <span class="info_letras"></i> Solo letras minúsculas y sin acentos</span>
                 </div>
                 <div class="ingreso_button">
-                    <button class="encriptar" type="submit">Encriptar</button>
-                    <button class="desencriptar" type="submit">Desencriptar</button>
+                    <button onclick="encriptar()" class="encriptar" type="submit">Encriptar</button>
+                    <button onclick="desencriptar()" class="desencriptar" type="submit">Desencriptar</button>
                 </div>
             </div>
         </section>
         <section class="section_salida">
-            <div class="salida_welcome">
+            <div id="salida_bienvenido" class="salida_welcome">
                 <img src="./Assets/logo.png" alt="">
                 <div class="salida_info">
                     <h2>Ningún mensaje fue encontrado</h2>
                     <p>Ingresa el texto que desees encriptar o desencriptar.</p>
                 </div>
             </div>
-            <div class="salida_result">
+            <div id="salida_resultado" class="salida_result">
                 <div class="result_info">
-                    <p>
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Harum quia adipisci inventore, dolores saepe illo nulla facilis sed consequatur in id voluptatum dolorum aliquam aliquid, commodi architecto assumenda voluptates culpa.
+                    <p id="texto_encriptado">
                         Lorem ipsum dolor sit, amet consectetur adipisicing elit. Harum quia adipisci inventore, dolores saepe illo nulla facilis sed consequatur in id voluptatum dolorum aliquam aliquid, commodi architecto assumenda voluptates culpa.
                     </p>
                 </div>
@@ -47,5 +46,7 @@
             
         </section>
     </main>
+
+    <script src="./Js/script.js"></script>
 </body>
 </html>

@@ -126,7 +126,7 @@ main{
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 .section_salida .salida_welcome{
-    display: none;
+    display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -155,7 +155,7 @@ main{
 }
 
 .section_salida .salida_result{
-    display: flex;
+    display: none;
     flex-direction: column;
     justify-content: space-between;
 }
