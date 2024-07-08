@@ -19,7 +19,6 @@
 
 body{
     font-family: "Roboto", sans-serif;
-    font-style: normal;
     background-color: var(--background-principal);
 }
 main{
@@ -27,10 +26,10 @@ main{
     grid-template-columns: 120px 2fr 1fr;
     grid-column-gap: 5rem;
     padding: 2.5rem;
-    height: 100vh;
+    min-height: 100vh;
 }
-.section_logo h1{
-    font-size: 4.5rem;
+.section_logo{
+    font-size: 3rem;
     text-align: center;
     color: #0A3871;
     
@@ -47,7 +46,6 @@ main{
     width: 100%;
     height: 100%;
     padding: 20px;
-    /* padding: 70px 8px 10px 0px; */
     font-size: 1.9rem;
     background-color: transparent;
     color: var(--color-section-ingreso);
@@ -187,43 +185,59 @@ textarea::-webkit-scrollbar-thumb {
 @media (max-width: 1080px) {
     main {
         grid-template-columns: 1fr; 
-        grid-template-rows: 100px 2fr auto;
-        grid-gap: 2rem; 
-        padding: 2.5rem; 
+        row-gap: 2rem; 
     }
 
     .section_logo {
-        grid-column: 1 / -1; 
-        grid-row: 1 / 2; 
-    }
-    .section_logo h1{
         text-align: left;
+        font-size: 3rem;
     }
 
     .section_ingreso {
-        grid-column: 1 / -1; 
-        grid-row: 2 / 3; 
-    }
-    .section_ingreso textarea {
-        padding: 0 0 10px 0;
+       padding: 0;
+       height: 80vh;
     }
 
     .section_salida {
-        grid-column: 1 / -1; 
-        grid-row: 3 / 4; 
         height: auto;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
     }
-
-    .section_salida .salida_welcome .salida_info {
-        width: auto;
+    
+    .section_salida .salida_welcome .salida_info{
+        width: 100%;
     }
 
     .section_salida img {
         display: none;
+    }
+    .section_salida .salida_result .result_info{
+        height: 80vh;
+    }
+}
+
+@media (max-width: 430px){
+    main{
+        padding: 1rem;
+    }
+    .section_logo{
+        font-size: 2rem;
+    }
+    .section_ingreso textarea{
+        font-size: 1.5rem;
+        padding: 10px;
+    }
+
+    .section_ingreso .ingreso_info .ingreso_button{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .section_salida .salida_result .result_info{
+        height: 80vh;
     }
 }
 
