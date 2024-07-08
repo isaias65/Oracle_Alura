@@ -29,7 +29,7 @@ function encriptar(){
 
 function desencriptar(){
     let textoDes = document.getElementById("textarea").value;
-    
+
     for(let [key, value] of Object.entries(encrip)){
         while (textoDes.includes(value)) {
             textoDes = textoDes.replace(value, key);
