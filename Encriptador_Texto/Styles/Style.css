@@ -9,6 +9,7 @@
     --color-section-ingreso-button: white;
     --color-section-salida: #343A40;
     --background-section-salida: white;
+    --background-section-ingreso-button-claro: #D8DFE8;
 }
 
 *{
@@ -68,7 +69,7 @@ textarea::-webkit-scrollbar-thumb {
     border-radius: 10px; 
 }
 
-.section_ingreso textarea::-webkit-scrollbar-thumb:hover {
+textarea::-webkit-scrollbar-thumb:hover {
     background-color: #356EA9; 
     cursor: pointer;
 }
@@ -103,13 +104,24 @@ textarea::-webkit-scrollbar-thumb {
     border: none;
 }
 .section_ingreso .ingreso_info .ingreso_button .desencriptar{
-    background-color: #D8DFE8;
+    background-color: var(--background-section-ingreso-button-claro);
     font-size: 1rem;
     width: 100%;
     color: var(--color-section-ingreso);
     padding: 24px;
     border-radius: 24px;
     border: 2px solid var(--color-section-ingreso);
+}
+.section_ingreso .ingreso_info .ingreso_button .encriptar:hover{
+    background-color: var(--background-section-ingreso-button-claro);
+    color: var(--color-section-ingreso);
+    border: 2px solid var(--color-section-ingreso);
+    cursor: pointer;
+}
+.section_ingreso .ingreso_info .ingreso_button .desencriptar:hover{
+    background-color: var(--color-section-ingreso);
+    color: var(--color-section-ingreso-button);
+    cursor: pointer;
 }
 .section_salida{
     background-color: var(--background-section-salida);
@@ -172,7 +184,7 @@ textarea::-webkit-scrollbar-thumb {
     padding: 10px 0 20px 0;
 }
 .section_salida .salida_result .result_button .copiar{
-    background-color: #D8DFE8;
+    background-color: var(--background-section-ingreso-button-claro);
     font-size: 1rem;
     width: 100%;
     color: var(--color-section-ingreso);
@@ -181,6 +193,11 @@ textarea::-webkit-scrollbar-thumb {
     border: 2px solid var(--color-section-ingreso);
 }
 
+.section_salida .salida_result .result_button .copiar:hover{
+    background-color: var(--color-section-ingreso);
+    color: var(--color-section-ingreso-button);
+    cursor: pointer;
+}
 
 @media (max-width: 1080px) {
     main {
