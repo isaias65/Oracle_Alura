@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./Styles/Style.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <title>Encriptador Texto</title>
 </head>
 <body>
@@ -33,12 +34,12 @@
                     <p>Ingresa el texto que desees encriptar o desencriptar.</p>
                 </div>
             </div>
-            <div id="salida_resultado" class="salida_result">
+            <div id="salida_resultado" class="salida_result activo">
                 <div class="result_info">
-                    <textarea name="texto_encriptado" class="info_encriptado" id="texto_encriptado"></textarea>
+                    <textarea name="texto_encriptado" class="info_encriptado" id="texto_encriptado" readonly></textarea>
                 </div>
                 <div class="result_button">
-                    <button class="copiar" type="submit">Copiar</button>
+                    <button id="copy" class="copiar" type="submit" onclick="copia()">Copiar</button>
                 </div>
             </div>
             

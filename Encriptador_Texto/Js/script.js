@@ -6,35 +6,66 @@ const encrip = {
     u:"ufat"
 }
 
-
 function encriptar(){
     let texto = document.getElementById("textarea").value;
-    let textoEncrip = " ";
+    let obtenerTextoEncriptado = "";
+
+    if(!texto){
+        mensajeAlerta("Mensaje vacío", "Por favor ingrese un texto", "warning");
+        return;
+    }
+    if (!/^[a-z\s]+$/.test(texto)) {
+        mensajeAlerta("Texto inválido", "Solo se permiten letras minúsculas y sin acentos.", "error");
+        return;
+    }
     for(let i of texto){
         if(encrip[i]){
-            textoEncrip += encrip[i];
-
-            let welcome = document.getElementById("salida_bienvenido");
-            welcome.style.display = "none";
-
-            let result = document.getElementById("salida_resultado");
-            result.style.display = "flex";
+            obtenerTextoEncriptado = obtenerTextoEncriptado + encrip[i];
         }else{
-            textoEncrip += i;
+            obtenerTextoEncriptado = obtenerTextoEncriptado + i;
         }
     }
-    let resultadoTexto = document.getElementById("texto_encriptado");
-    resultadoTexto.innerHTML = textoEncrip;
-}
+    const textoEncriptado = document.getElementById("texto_encriptado");
+    textoEncriptado.innerHTML = obtenerTextoEncriptado;
 
+    document.querySelector(".salida_result").classList.remove("activo");
+    document.querySelector(".salida_welcome").classList.add("activo");
+}
 function desencriptar(){
     let textoDes = document.getElementById("textarea").value;
+    let obtenerTextoDescriptado = textoDes; 
+    
+    if(!obtenerTextoDescriptado){
+        mensajeAlerta("Mensaje vacío", "Por favor ingrese un texto", "warning");
+        return;
+    }
+    if (!/^[a-z\s]+$/.test(obtenerTextoDescriptado)) {
+        mensajeAlerta("Texto inválido", "Solo se permiten letras minúsculas y sin acentos.", "error");
+        return;
+    }
 
     for(let [key, value] of Object.entries(encrip)){
-        while (textoDes.includes(value)) {
-            textoDes = textoDes.replace(value, key);
+        while (obtenerTextoDescriptado.includes(value)) {
+            obtenerTextoDescriptado = obtenerTextoDescriptado.replace(value, key);
         }
     }
-    let resultadoTexto = document.getElementById("texto_encriptado");
-    resultadoTexto.innerHTML = textoDes;
+
+    let textoDesencriptado  = document.getElementById("texto_encriptado");
+    textoDesencriptado.innerHTML = obtenerTextoDescriptado;
+
+
+}
+
+function copia(){
+    let copiarTexto = document.querySelector("#texto_encriptado");
+    copiarTexto.select();
+    document.execCommand("copy");
+}
+
+function mensajeAlerta(title, text, icon){
+    Swal.fire({
+        title: title,
+        text: text,
+        icon: icon
+      });
 }

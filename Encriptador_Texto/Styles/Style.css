@@ -10,6 +10,9 @@
     --color-section-salida: #343A40;
     --background-section-salida: white;
     --background-section-ingreso-button-claro: #D8DFE8;
+    --background-section-ingreso-button-claro-hover: white;
+    --background-section-ingreso-button-oscuro: #052051;
+    --background-section-ingreso-button-oscuro-hover: #0A3871;
 }
 
 *{
@@ -95,7 +98,7 @@ textarea::-webkit-scrollbar-thumb:hover {
     padding: 17px 0 32px 0;
 }
 .section_ingreso .ingreso_info .ingreso_button .encriptar{
-    background-color: var(--color-section-ingreso);
+    background-color: var(--background-section-ingreso-button-oscuro);
     font-size: 1rem;
     width: 100%;
     color: var(--color-section-ingreso-button);
@@ -113,14 +116,15 @@ textarea::-webkit-scrollbar-thumb:hover {
     border: 2px solid var(--color-section-ingreso);
 }
 .section_ingreso .ingreso_info .ingreso_button .encriptar:hover{
-    background-color: var(--background-section-ingreso-button-claro);
-    color: var(--color-section-ingreso);
-    border: 2px solid var(--color-section-ingreso);
+    background-color: var(--background-section-ingreso-button-oscuro-hover);
+    color: var(--color-section-ingreso-button);
+    transition: 0.5s;
     cursor: pointer;
 }
 .section_ingreso .ingreso_info .ingreso_button .desencriptar:hover{
-    background-color: var(--color-section-ingreso);
-    color: var(--color-section-ingreso-button);
+    background-color: var(--background-section-ingreso-button-claro-hover);
+    color: var(--background-section-ingreso-button-oscuro-hover);
+    transition: 0.5s;
     cursor: pointer;
 }
 .section_salida{
@@ -160,7 +164,7 @@ textarea::-webkit-scrollbar-thumb:hover {
 }
 
 .section_salida .salida_result{
-    display: none;
+    display: flex;
     flex-direction: column;
     justify-content: space-between;
     width: 100%;
@@ -180,6 +184,10 @@ textarea::-webkit-scrollbar-thumb:hover {
     outline: none;
 }
 
+.section_salida .salida_result .result_info .info_encriptado::selection{
+    background-color: var(--color-section-ingreso);
+    color: var(--background-section-salida);
+}
 .section_salida .salida_result .result_button{
     padding: 10px 0 20px 0;
 }
@@ -194,9 +202,13 @@ textarea::-webkit-scrollbar-thumb:hover {
 }
 
 .section_salida .salida_result .result_button .copiar:hover{
-    background-color: var(--color-section-ingreso);
-    color: var(--color-section-ingreso-button);
+    background-color: var(--background-section-ingreso-button-oscuro);
+    color: var(--background-section-salida);
     cursor: pointer;
+    transition: 0.5s;
+}
+.section_salida .activo{
+    display: none;
 }
 
 @media (max-width: 1080px) {
@@ -257,46 +269,3 @@ textarea::-webkit-scrollbar-thumb:hover {
         height: 80vh;
     }
 }
-
-/* @media (max-width: 1080px) {
-    main {
-        grid-template-columns: 1fr; 
-        grid-template-rows: 100px 0.9fr auto; 
-        grid-gap: 2rem; 
-        padding: 2.5rem; 
-    }
-
-    .section_logo {
-        grid-column: 1 / -1; 
-        grid-row: 1 / 2; 
-    }
-    .section_logo h1{
-        text-align: left;
-    }
-
-    .section_ingreso {
-        grid-column: 1 / -1; 
-        grid-row: 2 / 3; 
-    }
-    .section_ingreso textarea {
-        padding: 0 0 10px 0;
-    }
-
-    .section_salida {
-        grid-column: 1 / -1; 
-        grid-row: 3 / 4; 
-        height: auto;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .section_salida .salida_welcome .salida_info {
-        width: auto;
-    }
-
-    .section_salida img {
-        display: none;
-    }
-} */
