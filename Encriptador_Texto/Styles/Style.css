@@ -202,8 +202,9 @@ textarea::-webkit-scrollbar-thumb:hover {
 }
 
 .section_salida .salida_result .result_button .copiar:hover{
-    background-color: var(--background-section-ingreso-button-oscuro);
-    color: var(--background-section-salida);
+    /* background-color: var(--background-section-ingreso-button-oscuro); */
+    background-color: var(--background-section-salida);
+    color: var(--color-section-ingreso);
     cursor: pointer;
     transition: 0.5s;
 }
