@@ -13,6 +13,8 @@
     --background-section-ingreso-button-claro-hover: white;
     --background-section-ingreso-button-oscuro: #052051;
     --background-section-ingreso-button-oscuro-hover: #0A3871;
+    --background-footer: #343A40;
+    --background-footer-hover: #609ED4;
 }
 
 *{
@@ -33,11 +35,10 @@ main{
     min-height: 100vh;
 }
 .section_logo{
-    font-size: 3rem;
-    text-align: center;
-    color: #0A3871;
-    
+    display: flex;
+    justify-content: center;
 }
+
 .section_ingreso{
     display: flex;
     flex-direction: column;
@@ -202,7 +203,6 @@ textarea::-webkit-scrollbar-thumb:hover {
 }
 
 .section_salida .salida_result .result_button .copiar:hover{
-    /* background-color: var(--background-section-ingreso-button-oscuro); */
     background-color: var(--background-section-salida);
     color: var(--color-section-ingreso);
     cursor: pointer;
@@ -212,6 +212,42 @@ textarea::-webkit-scrollbar-thumb:hover {
     display: none;
 }
 
+footer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--background-footer);
+    color: var(--background-section-salida);
+}
+footer .container_footer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    gap: 1rem;
+}
+footer .container_footer ul{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    text-decoration: none;
+}
+footer .container_footer ul a{
+    text-decoration: none;
+    color: var(--background-section-salida);
+
+}
+footer i{
+    font-size: 2.5rem;
+}
+
+footer i:hover{
+    cursor: pointer;
+    color: var(--background-footer-hover);
+}
+
 @media (max-width: 1080px) {
     main {
         grid-template-columns: 1fr; 
@@ -219,8 +255,12 @@ textarea::-webkit-scrollbar-thumb:hover {
     }
 
     .section_logo {
-        text-align: left;
-        font-size: 3rem;
+        display: flex;
+        justify-content: left;
+    }
+    .section_logo svg{
+        width: 30px;
+        height: 45px;
     }
 
     .section_ingreso {
@@ -254,6 +294,10 @@ textarea::-webkit-scrollbar-thumb:hover {
     }
     .section_logo{
         font-size: 2rem;
+    }
+    .section_logo svg{
+        width: 25px;
+        height: 40px;
     }
     .section_ingreso textarea{
         font-size: 1.5rem;
