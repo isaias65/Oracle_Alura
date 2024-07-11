@@ -14,7 +14,7 @@ function encriptar(){
         mensajeAlerta("Mensaje vacío", "Por favor ingrese un texto", "warning");
         return;
     }
-    if (!/^[a-z\s]+$/.test(texto)) {
+    if (!/^[a-zñ\s,.]+$/.test(texto)) {
         mensajeAlerta("Texto inválido", "Solo se permiten letras minúsculas y sin acentos.", "error");
         return;
     }
