@@ -30,6 +30,11 @@ function encriptar(){
 
     document.querySelector(".salida_result").classList.remove("activo");
     document.querySelector(".salida_welcome").classList.add("activo");
+
+    if (obtenerTextoEncriptado) {
+        mensajeAlerta("Encriptación exitosa", "El texto ha sido encriptado correctamente", "success");
+        return;
+    }
 }
 function desencriptar(){
     let textoDes = document.getElementById("textarea").value;
@@ -53,6 +58,9 @@ function desencriptar(){
     let textoDesencriptado  = document.getElementById("texto_encriptado");
     textoDesencriptado.innerHTML = obtenerTextoDescriptado;
 
+    if (obtenerTextoDescriptado !== textoDes) {
+        mensajeAlerta("Desencriptación exitosa", "El texto ha sido desencriptado correctamente", "success");
+    }
 
 }
 
