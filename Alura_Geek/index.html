@@ -11,7 +11,40 @@
         <figure class="logo">
             <img src="./assets/icon-geek.svg" alt="icono de corazones">
         </figure>
-        <h2 class="title">AluraGeek</h2>
+        <h1 class="title">AluraGeek</h1>
     </header>
+    <main class="container-main">
+        <section class="section-add-products">
+            <h2 class="products-title">AGREGAR PRODUCTO:</h2>
+            <form class="add-form" data-form>
+                <input type="text" class="add-name" placeholder="Nombre..." required name="Nombre" id="Nombre" data-name autocomplete="off">
+                <input type="number" class="add-price" placeholder="Precio.." required name="Precio" id="Precio" data-precio autocomplete="off">
+                <input type="text" class="add-url" placeholder="URL de la imagen..." required name="url" id="url" data-url autocomplete="off">
+                <div class="add-button">
+                    <button type="submit" class="button add-submit">Enviar</button>
+                    <button type="reset" class="button add-reset">Limpiar</button>
+                </div>
+            </form>
+        </section>
+
+        <section class="section-products">
+            <h2 class="products-title">MIS PRODUCTOS:</h2>
+            <div class="container-products" data-list>
+            </div>
+        </section>
+    </main>
+    <footer class="container-footer">
+        <div class="footer-title">
+            <figure class="logo">
+                <img src="./assets/icon-geek.svg" alt="icono de corazones">
+            </figure>
+            <h2 class="title">AluraGeek</h2>
+        </div>
+        <p class="footer-details">&copy; 2024 - Desarrollado por Isaias Sandro</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="./js/mostrarData.js" type="module"></script>
+    <script src="./js/crearData.js" type="module"></script>
 </body>
 </html>
